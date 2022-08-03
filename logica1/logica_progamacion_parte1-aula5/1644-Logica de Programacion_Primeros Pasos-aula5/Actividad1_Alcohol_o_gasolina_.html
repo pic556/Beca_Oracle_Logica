@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<h3>¿Alcohol o gasolina?</h3>
+
+<script>
+/*Problema: Si un carro tiene un tanque de xx litros. 
+Usando gasolina y consumiendo todo el tanque se hace un camino de xxx kilómetros. 
+¿Cuál es el consumo de gasolina por kilómetro recorrido? 
+Para calcular el consumo: divide la distancia recorrida entre la 
+cantidad de litros gastados. 
+Imprime el valor utilizando document.write. Organiza las cuentas en variables.*/
+
+
+	function saltarLinea() {
+
+		document.write("<br>");		
+
+	}  
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltarLinea();
+
+	}
+
+    function distancia(tan,cam){
+        return (cam/tan);
+    }
+
+    tanque = prompt("informe la cantidad de litros que tiene el tanque")
+    caminoRecorrido = prompt("informe el camino recorrido en km")
+
+    dis = distancia(tanque,caminoRecorrido)
+
+    imprimir("su distancia calculada es: "+ dis);
+
+
+</script>

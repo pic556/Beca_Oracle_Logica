@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h3>¿Alcohol o gasolina?</h3>
+
+<script>
+/*¿Cuántos años de diferencia tienes con tu hermano? 
+Escribe un programa que muestre el mensaje ¨Nuestra diferencia de edad es¨*/
+
+
+	function saltarLinea() {
+
+		document.write("<br>");		
+
+	}  
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltarLinea();
+
+	}
+
+    function diferencia(m,x){
+        return m-x;
+    }
+
+    miedad = prompt("informe tu edad")
+    xedad = prompt("informe la edad con quien quieres diferenciar")
+
+    dif = diferencia(miedad,xedad)
+
+    imprimir("su diferencia calculada es: "+ dif);
+
+
+</script>

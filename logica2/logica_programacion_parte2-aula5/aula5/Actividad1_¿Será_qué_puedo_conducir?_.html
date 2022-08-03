@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+/*Este programa, de acuerdo con la respuesta del usuario, 
+debe mostrar el mensaje "Puedes conducir" o "No puedes conducir". 
+Recuerda que puede conducir solo quien tiene 18 años o más y 
+también quien tiene una licencia de conducir.*/
+
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    var edad = parseInt(prompt("¿Cuál es tu edad?"));
+    var tieneLicencia = prompt("¿Tienes licencia? Responde S o N , no vale minusculas");
+
+    if(edad>17 && tieneLicencia=="S" ){
+        imprimir("Puedes conducir");
+    }else{
+        imprimir("NO Puedes conducir");
+    }
+
+</script>

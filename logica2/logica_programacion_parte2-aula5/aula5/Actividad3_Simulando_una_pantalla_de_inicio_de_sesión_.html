@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<script>
+ /*Cambia el código anterior para que el usuario tenga 3 intentos de inicio de sesión. 
+ Atención: si lo hace bien en el primer intento, 
+ no tiene sentido seguir preguntando por su nombre de usuario y contraseña.*/   
+
+    var inicioDeSesionRegistrado = "a";
+    var contrasenhaRegistrada = "b";
+
+
+
+    var intentos = 1;
+    while(intentos<=3){
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+        if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            break
+        } else {
+            alert("inicio de sesión inválido. Favor intente de nuevo");
+            intentos++;
+        }
+
+    }
+    
+</script>
