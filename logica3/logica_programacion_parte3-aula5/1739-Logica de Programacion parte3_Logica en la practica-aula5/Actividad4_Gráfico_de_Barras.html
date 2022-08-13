@@ -1,0 +1,66 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    //ESTA FUNCION RECIBE X ,Y ,BASE ,ALTURA Y COLOR
+    function dibujarRectangulo(x, y, base, altura, color) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        //ESTABLESCO LA CUESTION 2D DE CANVAS
+        //DECLARO PANTALLA Y PINCEL
+
+        pincel.fillStyle=color; 
+        //COLOR QUE RECIBO LO TOMA EL PINCEL Y GRAFICA
+        pincel.fillRect(x,y, base, altura);
+        //ACA HACE LO MISMO CON EL COLOR PREDETERMINADO NEGRO PERO COMO BORDE
+        // BORDE EN NEGRO
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+    }
+
+    //INICIALIZO LA FUNCION PARA ESCRIBIR TEXTO CON X ,Y , Y LO QUE QUIERO ESCRIBIR
+
+    function escribirTexto(x , y, texto) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        //tipo de fuente
+        pincel.fillStyle="black";
+        //color del tipoe
+        pincel.fillText(texto, x, y);
+        //Que y donde escribirlo    
+    }
+
+    var serie2009 = [6, 47, 41, 3, 3];
+    //para barra del 2009 que contiene la altura
+    var serie2019 = [81, 9, 3, 3, 4];
+    //para barra del 2019
+    var colores = ["blue","green","yellow", "red","gray"];
+    //los colores que integraban en ambas
+
+
+        //en esta funcion metemos x,y, lista de serie ,lista de colores y el texto
+    function dibujarBarra(x, y, serie, colores, texto) {
+        //escribo el texto 
+        escribirTexto(x, y - 10, texto);
+
+        var sumaAltura = 0;
+        //inicializo sumar altura
+
+        for (var i = 0; i < serie.length; i++) {
+            // altura se va modificando con el incio de la lista
+            var altura = serie[i];
+            //dibuja el rectangulo con el color indicado y altura que esta en serie
+            dibujarRectangulo(x, y + sumaAltura, 50, altura, colores[i]);
+            sumaAltura = sumaAltura + altura; //lo que diste de altura se suma en sumaaltura
+            //luego se le suma en y para que no haya rozamiento
+        }
+    }
+
+
+    dibujarBarra(50, 50, serie2009, colores, "2009");
+    dibujarBarra(150, 50, serie2019, colores, "2019");
+//llamado a las funciones ennn distintos x´s
+</script>
